@@ -170,7 +170,7 @@ def display_fees():
 def add_exam():
     exam_id = int(input("Enter Exam ID: "))
     subject = input("Enter Subject: ")
-    date = input("Enter Date (YYYY-MM-DD): ")
+    date = input("Enter Date (DD-MM-YYYY): ")
     
     sql = "INSERT INTO exams (exam_id, subject, date) VALUES (%s, %s, %s)"
     values = (exam_id, subject, date)

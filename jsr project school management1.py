@@ -143,7 +143,7 @@ def add_fee():
         return
     
     amount = float(input("Enter Amount: "))
-    date = input("Enter Date (YYYY-MM-DD): ")
+    date = input("Enter Date (DD-MM-YYYY): ")
     
     sql = "INSERT INTO fees (student_id, amount, date) VALUES (%s, %s, %s)"
     values = (student_id, amount, date)

@@ -18,10 +18,10 @@ def add_student():
     grade = input("Enter Grade: ")
     section = input("Enter Section: ")
     
-    sql = "INSERT INTO students (roll_number, name, grade, section) VALUES (%s, %s, %s, %s)"
+    query = "INSERT INTO students (roll_number, name, grade, section) VALUES (%s, %s, %s, %s)"
     values = (roll_number, name, grade, section)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     print("Student added successfully.")
@@ -45,10 +45,10 @@ def update_student():
     field = input("Enter the field to update (name/grade/section): ")
     new_value = input("Enter the new value: ")
     
-    sql = f"UPDATE students SET {field} = %s WHERE roll_number = %s"
+    query = f"UPDATE students SET {field} = %s WHERE roll_number = %s"
     values = (new_value, roll_number)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     if cursor.rowcount == 0:
@@ -60,10 +60,10 @@ def update_student():
 def delete_student():
     roll_number = int(input("Enter Roll Number of the student to delete: "))
     
-    sql = "DELETE FROM students WHERE roll_number = %s"
+    query = "DELETE FROM students WHERE roll_number = %s"
     values = (roll_number,)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     if cursor.rowcount == 0:
@@ -77,10 +77,10 @@ def add_employee():
     designation = input("Enter Designation: ")
     salary = float(input("Enter Salary: "))
     
-    sql = "INSERT INTO employees (employee_id, name, designation, salary) VALUES (%s, %s, %s, %s)"
+    query = "INSERT INTO employees (employee_id, name, designation, salary) VALUES (%s, %s, %s, %s)"
     values = (employee_id, name, designation, salary)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     print("Employee added successfully.")
@@ -104,10 +104,10 @@ def update_employee():
     field = input("Enter the field to update (name/designation/salary): ")
     new_value = input("Enter the new value: ")
     
-    sql = f"UPDATE employees SET {field} = %s WHERE employee_id = %s"
+    query = f"UPDATE employees SET {field} = %s WHERE employee_id = %s"
     values = (new_value, employee_id)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     if cursor.rowcount == 0:
@@ -119,10 +119,10 @@ def update_employee():
 def delete_employee():
     employee_id = int(input("Enter Employee ID to delete: "))
     
-    sql = "DELETE FROM employees WHERE employee_id = %s"
+    query = "DELETE FROM employees WHERE employee_id = %s"
     values = (employee_id,)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     if cursor.rowcount == 0:
@@ -145,10 +145,10 @@ def add_fee():
     amount = float(input("Enter Amount: "))
     date = input("Enter Date (DD-MM-YYYY): ")
     
-    sql = "INSERT INTO fees (student_id, amount, date) VALUES (%s, %s, %s)"
+    query = "INSERT INTO fees (student_id, amount, date) VALUES (%s, %s, %s)"
     values = (student_id, amount, date)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     print("Fee record added successfully.")
@@ -172,10 +172,10 @@ def add_exam():
     subject = input("Enter Subject: ")
     date = input("Enter Date (DD-MM-YYYY): ")
     
-    sql = "INSERT INTO exams (exam_id, subject, date) VALUES (%s, %s, %s)"
+    query = "INSERT INTO exams (exam_id, subject, date) VALUES (%s, %s, %s)"
     values = (exam_id, subject, date)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     print("Exam record added successfully.")
@@ -199,10 +199,10 @@ def update_exam():
     field = input("Enter the field to update (subject/date): ")
     new_value = input("Enter the new value: ")
     
-    sql = f"UPDATE exams SET {field} = %s WHERE exam_id = %s"
+    query = f"UPDATE exams SET {field} = %s WHERE exam_id = %s"
     values = (new_value, exam_id)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     if cursor.rowcount == 0:
@@ -214,10 +214,10 @@ def update_exam():
 def delete_exam():
     exam_id = int(input("Enter Exam ID to delete: "))
     
-    sql = "DELETE FROM exams WHERE exam_id = %s"
+    query = "DELETE FROM exams WHERE exam_id = %s"
     values = (exam_id,)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     if cursor.rowcount == 0:
@@ -230,10 +230,10 @@ def add_hostel():
     gender = input("Enter Gender (G/SJ/SB): ")
     capacity = int(input("Enter Capacity: "))
     
-    sql = "INSERT INTO hostels (house, gender, capacity) VALUES (%s, %s, %s)"
+    query = "INSERT INTO hostels (house, gender, capacity) VALUES (%s, %s, %s)"
     values = (house, gender, capacity)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     print("Hostel added successfully.")
@@ -257,10 +257,10 @@ def update_hostel():
     field = input("Enter the field to update (house/gender/capacity): ")
     new_value = input("Enter the new value: ")
     
-    sql = f"UPDATE hostels SET {field} = %s WHERE hostel_id = %s"
+    query = f"UPDATE hostels SET {field} = %s WHERE hostel_id = %s"
     values = (new_value, hostel_id)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     if cursor.rowcount == 0:
@@ -272,10 +272,10 @@ def update_hostel():
 def delete_hostel():
     hostel_id = int(input("Enter Hostel ID to delete: "))
     
-    sql = "DELETE FROM hostels WHERE hostel_id = %s"
+    query = "DELETE FROM hostels WHERE hostel_id = %s"
     values = (hostel_id,)
     
-    cursor.execute(sql, values)
+    cursor.execute(query, values)
     db.commit()
     
     if cursor.rowcount == 0:

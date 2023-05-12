@@ -287,7 +287,7 @@ def delete_hostel():
 
 while True:
     print("\nSchool Management System")
-    print ("JAWAHAR NAVODAYA VIDYALAYA  KANPUR DEHAT")
+    print ("\nJAWAHAR NAVODAYA VIDYALAYA  KANPUR DEHAT")
     print("------------------------")
     print("1. Add Student")
     print("2. Display Students")
